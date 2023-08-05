@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row row-center">
+    <div class="col-center">
+      <div class="login-layout">
+        <div style="text-align: center;">
+          <img src="./assets/images/moph_logo.png" style="width: 150px;" alt="">
+        </div>
+
+        <h3 class="login-title">ยืนยันตัวตนเข้าสู่ระบบ</h3>
+        <form nz-form name="form" [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6">ชื่อผู้ใช้งาน</nz-form-label>
+            <nz-form-control nzHasFeedback [nzSpan]="18" nzErrorTip="กรุณาระบุชื่อผู้ใช้งาน">
+              <nz-input-group>
+                <input nz-input placeholder="username" name="username" formControlName="username" required />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6">รหัสผ่าน</nz-form-label>
+            <nz-form-control nzHasFeedback [nzSpan]="18" nzErrorTip="กรุณาระบุรหัสผ่าน">
+              <nz-input-group [nzSuffix]="suffixPassword">
+                <input nz-input name="password" formControlName="password"
+                  [type]="passwordVisible ? 'text' : 'password'" placeholder="password" required />
+              </nz-input-group>
+              <ng-template #suffixPassword>
+                <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+                  (click)="passwordVisible = !passwordVisible" nzTheme="outline"></i>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control [nzSpan]="18" [nzOffset]="6">
+              <div nz-row class="login-form-margin">
+                <div nz-col [nzSpan]="12">
+                  <label nz-checkbox nzDisabled>
+                    <span>จดจำผู้ใช้งาน</span>
+                  </label>
+                </div>
+                <div nz-col [nzSpan]="12" style="text-align: right;">
+                  <a class="login-form-forgot">ลืมรหัสผ่าน?</a>
+                </div>
+              </div>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control [nzSpan]="24" [nzOffset]="0" style="text-align: center;">
+              <button type="submit" nz-button style="width: 100px;" nzType="primary">เข้าสู่ระบบ</button>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

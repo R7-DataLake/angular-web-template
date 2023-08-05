@@ -1,0 +1,50 @@
+<nz-modal [(nzVisible)]="isVisible" nzCentered="true" nzKeyboard="false" nzMaskClosable="false"
+  nzTitle="เพิ่มผู้ใช้งานใหม่" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="isOkLoading">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label nzRequired [nzSpan]="8" nzFor="username">ชื่อผู้ใช้งาน</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzErrorTip="ระบุชื่อผู้ใช้งาน">
+          <input nz-input formControlName="username" name="username" type="username" id="username">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired [nzSpan]="8" nzFor="password">รหัสผ่าน</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzErrorTip="ระบุรหัสผ่าน 4 ตัวอักษรขึ้นไป">
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="12">
+              <input formControlName="password" nz-input id="password" type="text" name="password" />
+            </div>
+            <div nz-col [nzSpan]="12">
+              <button nz-button nzType="default" [disabled]="userId" (click)="randomPassword()">สุ่ม</button>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired [nzSpan]="8" nzFor="firstName">ชื่อ</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzErrorTip="ระบุชื่อ">
+          <input formControlName="firstName" nz-input id="firstName" type="text" name="firstName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzRequired [nzSpan]="8" nzFor="lastName">สกุล</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzErrorTip="ระบุชื่อ">
+          <input formControlName="lastName" nz-input id="lastName" type="text" name="lastName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzFor="isAdmin">ผู้ดูแลระบบ</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <label nz-checkbox formControlName="isAdmin" id="isAdmin" name="isAdmin">เป็นผู้ดูแลระบบ</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzFor="enabled">เปิดใช้งาน</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <label nz-checkbox formControlName="enabled" id="enabled" name="enabled">เปิดใช้งาน</label>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>

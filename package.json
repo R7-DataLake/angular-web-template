@@ -1,0 +1,51 @@
+{
+  "name": "health-station-api",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "npx ng",
+    "start": "npx ng serve",
+    "build": "npx ng build --configuration production --output-path=./dist/web --base-href=./",
+    "watch": "npx ng build --watch --configuration development",
+    "test": "npx ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.1.8",
+    "@angular/common": "^16.1.8",
+    "@angular/compiler": "^16.1.8",
+    "@angular/core": "^16.1.8",
+    "@angular/forms": "^16.1.8",
+    "@angular/platform-browser": "^16.1.8",
+    "@angular/platform-browser-dynamic": "^16.1.8",
+    "@angular/router": "^16.1.8",
+    "@ant-design/icons-angular": "^16.0.0",
+    "@auth0/angular-jwt": "^5.1.2",
+    "axios": "^1.4.0",
+    "echarts": "^5.4.3",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21",
+    "luxon": "^3.3.0",
+    "ng-zorro-antd": "^16.1.0",
+    "ngx-echarts": "^16.0.0",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.6.1",
+    "zone.js": "~0.13.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.1.7",
+    "@angular/cli": "~16.1.7",
+    "@angular/compiler-cli": "^16.1.8",
+    "@types/jasmine": "~4.3.5",
+    "@types/leaflet": "^1.9.3",
+    "@types/lodash": "^4.14.196",
+    "@types/luxon": "^3.3.1",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.2",
+    "karma-chrome-launcher": "~3.1.1",
+    "karma-coverage": "~2.2.1",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~5.1.6"
+  },
+  "packageManager": "pnpm@7.25.1"
+}

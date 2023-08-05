@@ -1,0 +1,21 @@
+<nz-layout>
+  <app-header></app-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li nz-submenu nzOpen nzIcon="pie-chart" nzTitle="Dashboard">
+          <ul>
+            <li nz-menu-item routerLink="/settings/main" routerLinkActive="ant-menu-item-selected">ตั้งค่าระบบ</li>
+            <li nz-menu-item routerLink="/settings/libs" routerLinkActive="ant-menu-item-selected">ข้อมูลพื้นฐาน
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout class="inner-layout">
+      <router-outlet></router-outlet>
+      <!-- Footer -->
+      <app-footer></app-footer>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,57 @@
+<nz-content>
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>
+      <span nz-icon nzType="home"></span>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <span nz-icon nzType="setting"></span>
+      ตั้งค่าระบบ
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <nz-page-header style="background-color: white;" class="site-page-header" nzTitle="ตั้งค่าระบบ"
+    nzSubtitle="ตั้งค่าการใช้งานระบบ">
+
+  </nz-page-header>
+  <div class="inner-content">
+    <nz-card style="width:460px;" nzTitle="ตั้งค่าระบบ">
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="save()">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>รหัสหน่วยบริการ</nz-form-label>
+          <nz-form-control [nzSpan]="17" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
+            <input nz-input formControlName="hospcode" placeholder="" />
+            <ng-template #userErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('required')">ระบุรหัสหน่วยบริการ!</ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>ชื่อหน่วยบริการ</nz-form-label>
+          <nz-form-control [nzSpan]="17" nzHasFeedback nzErrorTip="ระบุชื่อหน่วยบริการ">
+            <input nz-input formControlName="hospname" type="text" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-divider nzText="กำหนดค่าการเชื่อมต่อ LINE"></nz-divider>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Secret token</nz-form-label>
+          <nz-form-control [nzSpan]="17" nzHasFeedback nzErrorTip="ระบุ LINE Secret token">
+            <textarea formControlName="lineSecretToken" nz-input rows="3" placeholder=""></textarea>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="7" nzRequired>Notify token</nz-form-label>
+          <nz-form-control [nzSpan]="17" nzHasFeedback nzErrorTip="">
+            <input nz-input formControlName="lineNotifyToken" placeholder="" type="text" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control [nzOffset]="7" [nzSpan]="12">
+            <button nz-button nzType="primary" [disabled]="!validateForm.valid"
+              [nzLoading]="loading">บันทึกข้อมูล</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </nz-card>
+
+  </div>
+</nz-content>
